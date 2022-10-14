@@ -15,8 +15,26 @@ This program contains functions implementing Caesar cipher encryption.
 // A helper function to shift one character by rshift
 char shiftChar(char c, int rshift) // rshift: 0 <= rshift <= 25
 {
-  char result;
-  result = c + rshift;
+  char result = c;
+
+  if(((int)c > 64 && (int)c < 91) || ((int)c > 96 && (int)c < 123))
+  {
+    result = c + rshift;
+  }
+  else
+  {
+    return result;
+  }
+
+  if(((int)c > 64 && (int)c < 91) && (int)c + rshift > 90)
+  {
+    result = ((c + rshift) - 90) + 64;
+  }
+  if(((int)c > 96 && (int)c < 123) && (int)c + rshift > 122)
+  {
+    result = ((c + rshift) - 122) + 96;
+  }
+  
   return result;
 }
 
