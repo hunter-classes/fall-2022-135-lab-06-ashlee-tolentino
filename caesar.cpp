@@ -38,11 +38,19 @@ char shiftChar(char c, int rshift) // rshift: 0 <= rshift <= 25
   return result;
 }
 
-
-/*
 // Caesar cipher encryption
 std::string encryptCaesar(std::string plaintext, int rshift)
 {
-  return "hi";
+  std::string result = "";
+  
+  for(int i = 0; i < plaintext.length(); i++)
+  {
+    char letter = plaintext[i]; //converts substring into a char
+    char c = shiftChar(letter, rshift);
+    std::string s(1, c); //converts char into a string
+    result += s;
+  }
+  
+  return result;
 }
-*/
+
