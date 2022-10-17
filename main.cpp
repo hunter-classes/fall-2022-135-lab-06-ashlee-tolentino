@@ -12,6 +12,7 @@ This program contains functions implementing Caesar cipher encryption.
 #include <cctype>
 #include "caesar.h"
 #include "vigenere.h"
+#include "decrypt.h"
 
 int main()
 {
@@ -27,6 +28,12 @@ int main()
 
   std::string result3 = encryptVigenere("Hello, World!", "cake");
   std::cout << "Plaintext: Hello, World!\nkeyword: cake\nCiphertext: " << result3 << std::endl;
+
+  std::cout << "------------------------------------\n= Caesar Decryption =\n";
+
+  std::string result4 = decryptCaesar("Rovvy, Gybvn!", 10);
+  std::cout << "Ciphertext: Rovvy, Gybvn!\nshift: 10\nPlaintext: " << result4 << std::endl;
+  
   
   return 0;
 }
