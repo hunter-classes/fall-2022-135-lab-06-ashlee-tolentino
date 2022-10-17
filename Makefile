@@ -18,6 +18,7 @@ decrypt.o: decrypt.cpp decrypt.h
 main.o: main.cpp caesar.h vigenere.h decrypt.h
 
 tests.o: tests.cpp doctest.h caesar.h vigenere.h decrypt.h
+	g++ -c -std=c++11 tests.cpp
 
 test-ascii.o: test-ascii.cpp
 
