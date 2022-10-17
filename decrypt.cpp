@@ -10,8 +10,6 @@ This program contains two decryption functions corresponding to the two ciphers.
 #include <iostream>
 #include <string>
 #include <cctype>
-//#include "vigenere.h"
-//#include "caesar.h"
 
 // A helper function to shift one character by lshift
 char shiftCharLeft(char c, int lshift) // lshift: 0 <= lshift <= 25
@@ -52,5 +50,32 @@ std::string decryptCaesar(std::string ciphertext, int rshift)
     result += s;
   }
   
+  return result;
+}
+
+//This function decrypts a Vigenere cipher encryption.
+std::string decryptVigenere(std::string ciphertext, std::string keyword)
+{
+  std::string result = "";
+  int index = 0;
+  
+  for(int i = 0; i < ciphertext.length(); i++)
+  {
+    char letter = ciphertext[i]; //converts substring into a char
+    char c = shiftCharLeft(letter, (int)keyword[index] - 97);
+    std::string s(1, c); //converts char into a string
+    index++;
+    if(((int)letter >= 0 && (int)letter < 65) || ((int)letter > 90 && (int)letter < 97) || ((int)letter > 122))
+    {
+      index--;
+    }
+    if(index == keyword.length())
+    {
+      index = 0;
+    }
+
+    result += s;
+  }
+
   return result;
 }
