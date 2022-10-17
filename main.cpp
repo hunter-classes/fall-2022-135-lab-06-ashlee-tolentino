@@ -33,7 +33,11 @@ int main()
 
   std::string result4 = decryptCaesar("Rovvy, Gybvn!", 10);
   std::cout << "Ciphertext: Rovvy, Gybvn!\nshift: 10\nPlaintext: " << result4 << std::endl;
-  
+
+  std::cout << "------------------------------------\n= Vigenere Decryption =\n";
+
+  std::string result5 = decryptVigenere("Jevpq, Wyvnd!", "cake");
+  std::cout << "Ciphertext: Jevpq, Wyvnd!\nkeyword: cake\nPlaintext: " << result5 << std::endl;
   
   return 0;
 }
