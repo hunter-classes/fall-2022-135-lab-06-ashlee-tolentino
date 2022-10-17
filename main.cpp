@@ -15,14 +15,18 @@ This program contains functions implementing Caesar cipher encryption.
 
 int main()
 {
-  char result = shiftChar('!', 5);
-  std::cout << result << std::endl;
+  char result = shiftChar('W', 5);
+  std::cout << "Char: W\nshift: 5\nResult: " << result << std::endl;
 
-  std::string result2 = encryptCaesar("Way to Go!", 5);
-  std::cout << result2 << std::endl;
+  std::cout << "------------------------------------\n= Caesar Encryption =\n";
+
+  std::string result2 = encryptCaesar("Hello, World!", 10);
+  std::cout << "Plaintext: Hello, World!\nshift: 10\nCiphertext: " << result2 << std::endl;
+
+  std::cout << "------------------------------------\n= Vigenere Encryption =\n";
 
   std::string result3 = encryptVigenere("Hello, World!", "cake");
-  std::cout << result3 << std::endl;
+  std::cout << "Plaintext: Hello, World!\nkeyword: cake\nCiphertext: " << result3 << std::endl;
   
   return 0;
 }
