@@ -5,7 +5,7 @@
 #include "decrypt.h"
 
 TEST_CASE("shiftChar"){
-  CHECK(shiftChar('W', 5 == 'B'));
+  CHECK(shiftChar('W', 5) == 'B');
   CHECK(shiftChar('o', 10) == 'y');
   CHECK(shiftChar('!', 15) == '!');
 }
